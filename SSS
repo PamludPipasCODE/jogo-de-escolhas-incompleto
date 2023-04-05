@@ -1,0 +1,170 @@
+from time import sleep
+policia = 0
+sleep(1)
+def slowprint(texto, atraso=0.06):
+  for c in texto:
+    print(c,end='',flush=True)
+    sleep(atraso)
+def pul():
+  print('')
+slowprint('Domingo, 15 de outubro de 1989, Newcastle ')
+sleep(1)
+pul()
+slowprint('Você escuta um barulho intenso na sala ')
+pul()
+pul()
+sleep(0.5)
+while True:
+  gameover = 0
+  print('''Escolha uma Opção :
+[1] ir até a Sala
+[2] se esconder em baixo da cama
+[3] verificar cameras da casa pelo celular      
+    ''' )
+  e1 = int(input('Escolha : '))
+  sair = 0
+  while True:
+    pul()
+    pul()
+    if e1 == 1:
+      slowprint('Você Levanta da sua cama, e vai analisar a situação  ')
+      pul()
+      pul()
+      sleep(1) 
+      if policia == 1:
+        slowprint('Você Solicitou uma Viatura...') 
+        pul()
+        sleep(1)
+        print(''' Deseja ir mesmo para a Sala ?
+              
+[1] Sim, quero ir para a sala.
+[2] Continuar no Quarto 
+              ''')
+        rviatura = int(input('Escolha : '))
+        sleep(1)
+        if rviatura == 2:
+          break
+        policia += 1
+      slowprint('. . . . . . . . . . .  ')
+      pul()
+      pul()
+      if policia == 2:
+        slowprint('SIRENES DE POLICIA CHEGAM FAZENDO O MAIOR BARULHO ....')
+        pul() 
+        pul()
+        sleep(1)
+        slowprint('A Policia Chega em sua casa porém não encontra nada, apenas vestigios de um Assalto.')
+        pul()
+        pul()
+        slowprint('Você Foi Roubado e o Ladrão desapareceu de sua residencia...')
+        sleep(1)
+        print('VOCÊ PERDEU O JOGO... ')
+        sleep(3)
+        print('Dica: Não faça muito barulho, o assaltante é veloz, tente analisar a situação antes ')
+        sleep(3)
+        print('''Deseja Começar Denovo ? ? ?
+[1] SIM 
+[2] NÃO
+              ''')
+        gameo = int(input('Escolha : '))
+        if gameo == 1:
+          gameover += 1
+          break
+        if gameo == 2:
+          gameover += 2
+          break
+      slowprint('Você vai chegando perto ')
+      pul()
+      pul()
+      print('É UM LADRÃO !!!!')
+      sleep(2)
+      slowprint('Ele está roubando suas coisas, Oque fazer ??')
+      pul()
+      pul()
+      print('''Selecione uma opção 
+[1] Voltar para o Quarto
+[2] Procurar uma Alternativa para Parar o Ladrão
+[3] Se esconder e Ligar para a Policia 
+          ''')
+      ee1 = int(input('Escolha : '))
+      if ee1 == 1:
+        print('Você volta para o Quarto . . .')
+        sleep(1)
+        break #IR ATÉ A SALA #
+      if ee1 == 3:
+        print('VOCÊ LIGA PARA A POLICIA ...')
+        sleep(3)
+        print('Atendente : ' )
+        slowprint('Policia de Newcastle, Boa Noite, com quem eu falo ?.')
+        pul()
+        nome = str(input('Fale seu Nome : '))
+        pul()
+        print('Atendente: ')
+        slowprint(f'Muito Prazer {nome}, Em oque posso te ajudar ?')
+        pul()
+        pul()
+        print('Você diz que encontrou um Ladrão em sua casa...!!!')
+        sleep(2)
+        pul()
+        pul()
+        print('Atendente: ')
+        slowprint('Uma Unidade está a caminho de sua Residencia, Aguarde escondido.')
+        pul()
+        pul()
+        policia += 1  
+    if e1 == 2: # SE ESCONDER EM BAIXO DA CAMA #
+      if sair >= 1:
+        break
+      slowprint('Você se esconde em baixo da cama...')
+      pul()
+      pul()
+      sleep(1)
+    
+      while True:
+        print('''Escolha uma Opção :
+[1] Sair de baixo da cama
+[2] Ligar para a Policia 
+[3] Verificar cameras da casa pelo celular      
+    ''' )
+        er1 = int(input('Escolha : '))
+        if er1 == 1 :
+          print('você sai de baixo da cama ... ')
+          sleep(1)
+          sair += 1
+        if er1 == 2 :
+          print('VOCÊ LIGA PARA A POLICIA ...')
+          sleep(3)
+          print('Atendente : ' )
+          slowprint('Policia de Newcastle, Boa Noite, com quem eu falo ?.')
+          pul()
+          nome = str(input('Fale seu Nome : '))
+          pul()
+          print('Atendente: ')
+          slowprint(f'Muito Prazer {nome}, Em oque posso te ajudar ?')
+          pul()
+          pul()
+          print('Você diz que escutou barulhos em sua casa...!!!')
+          sleep(2)
+          pul()
+          print('Atendente: ')
+          slowprint('Uma Unidade está a caminho de sua Residencia, Aguarde escondido.')
+          pul()
+          pul()
+          policia += 1         
+        if er1 == 3 :
+          print(' Cameras não estão funcionando !!!')
+          sleep(1)
+          pul()
+        # VERIFICAR CAMERAS ##Verificar cameras em baixo da cama
+        if sair >= 1 :
+         break
+    if e1 == 3:
+      slowprint('Você abre as cameras de casa pelo seu celular...')
+      pul()
+      pul()
+      sleep(2)
+      print('CAMERAS NÃO ESTÃO FUNCIONANDO !!!')
+      sleep(1)
+      pul()
+      break  # VERIFICAR CAMERAS #
+ 
